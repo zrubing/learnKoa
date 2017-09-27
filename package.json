@@ -1,0 +1,22 @@
+{
+    "name": "learnKoa",
+    "version": "1.0.0",
+    "description": "learn koa",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+    ],
+    "author": "",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "dependencies": {
+        "koa":"2.3.0",
+        "koa-router":"7.2.1",
+        "koa-bodyparser":"4.2.0"
+    }
+}
