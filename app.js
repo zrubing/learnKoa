@@ -1,5 +1,7 @@
 'use strict'
 
+process.env.NODE_ENV='test';
+
 const Koa = require('koa');
 // 注意require('koa-router')返回的是函数:
 const router = require('koa-router')();
