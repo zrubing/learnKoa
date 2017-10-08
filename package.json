@@ -27,6 +27,7 @@
         "node-uuid":"1.4.8"
     },
     "devDependencies": {
-        "mocha":"4.0.1"
+        "mocha":"4.0.1",
+        "supertest":"3.0.0"
     }
 }
