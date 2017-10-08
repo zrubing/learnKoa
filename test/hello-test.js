@@ -7,19 +7,19 @@ describe('#hello.js', () => {
     describe('#sum()', () => {
 
         before(function () {
-            console.log('before:');
+            // console.log('before:');
         });
 
         after(function () {
-            console.log('after.');
+            // console.log('after.');
         });
 
         beforeEach(function () {
-            console.log('  beforeEach:');
+            // console.log('  beforeEach:');
         });
 
         afterEach(function () {
-            console.log('  afterEach.');
+            // console.log('  afterEach.');
         });
 
 
