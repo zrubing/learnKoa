@@ -2,9 +2,9 @@
     "name": "learn_koa",
     "version": "1.0.0",
     "description": "learn koa",
-    "main": "app.js",
+    "main": "start.js",
     "scripts": {
-        "start": "node app.js",
+        "start": "node start.js",
         "test": "mocha"
     },
     "keywords": [

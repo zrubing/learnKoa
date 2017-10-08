@@ -31,6 +31,5 @@ app.use(templating('views', {
 app.use(controller());
 
 
+module.exports=app;
 
-app.listen(3000);
-console.log('app started at port 3000');
