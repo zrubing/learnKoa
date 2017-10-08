@@ -1,6 +1,6 @@
 'use strict'
 
-process.env.NODE_ENV='test';
+process.env.NODE_ENV = 'test';
 
 const Koa = require('koa');
 // 注意require('koa-router')返回的是函数:
@@ -11,6 +11,31 @@ const controller = require('./controller');
 let staticFiles = require('./static-files');
 const isProduction = process.env.NODE_ENV === 'production';
 let templating = require('./templating');
+
+
+// 导入WebSocket模块:
+const WebSocket = require('ws');
+
+// 引用Server类:
+const WebSocketServer = WebSocket.Server;
+
+// 实例化:
+const wss = new WebSocketServer({
+    port: 3001
+});
+
+
+wss.on('connection', function (ws) {
+    console.log(`[SERVER] connection()`);
+    ws.on('message', function (message) {
+        console.log(`[SERVER] Received: ${message}`);
+        ws.send(`ECHO: ${message}`, (err) => {
+            if (err) {
+                console.log(`[SERVER] error: ${err}`);
+            }
+        });
+    })
+});
 
 const app = new Koa();
 //必须在router之前注册
@@ -31,5 +56,4 @@ app.use(templating('views', {
 app.use(controller());
 
 
-module.exports=app;
-
+module.exports = app;
