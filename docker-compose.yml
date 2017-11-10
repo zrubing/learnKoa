@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  db:
+    container_name: learnkoa_db
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: learnkoa
+      MYSQL_USER: www
+      MYSQL_PASSWORD: www
+      MYSQL_ROOT_PASSWORD: supersecret
+    ports:
+      - 3306:3306
+  web:
+    build: .
+    container_name: learnkoa
+    command: nodemon --inspect=0.0.0.0:5858
+    volumes:
+      - .:/code
+    ports:
+      - "8000:3000"
+      - "5858:5858"
+    depends_on:
+      - db
