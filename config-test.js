@@ -1,8 +1,8 @@
 var config = {
-    database: 'test',
+    database: 'learnkoa',
     username:'www',
     password:'www',
-    host:'localhost',
+    host:'db',
     port:'3306'
 };
 
