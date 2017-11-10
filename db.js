@@ -9,7 +9,7 @@ function generateId() {
     return uuid.v4();
 }
 var sequelize = new Sequelize(config.database, config.username, config.password, {
-    host: 'localhost',
+    host: config.host,
     dialect: 'mysql',
     pool: {
         max: 5,
